@@ -5,10 +5,10 @@ python3 | pip3 | pipenv | pytest
 `pipenv install`
 
 ## START APP
-`pipenv run ./start.sh`
+`pipenv run ./scripts/start.sh`
 
 ## TESTS
-`pipenv run ./test.sh`
+`pipenv run ./scripts/test.sh`
 
 ## SUPERVISOR
 - move config file to: `/etc/supervisor/conf.d/pi-time-schedule.conf`
