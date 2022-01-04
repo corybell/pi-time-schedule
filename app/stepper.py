@@ -34,16 +34,15 @@ class Stepper():
 
       t = r['timer']
       if t is None:
+        endpoints.append(f'relay/{r_id}/off')
         continue
       
       t_hr = t.get('hr')
-      if t_hr is None:
+      t_min = t.get('min')
+      if t_hr is None or t_min is None:
+        endpoints.append(f'relay/{r_id}/off')
         continue
 
-      t_min = t.get('min')
-      if t_min is None:
-        continue
-      
       val = self.__get_timer_val(t_hr, t_min, curr_min, curr_hr)
       endpoints.append(f'relay/{r_id}/{val}')
 
